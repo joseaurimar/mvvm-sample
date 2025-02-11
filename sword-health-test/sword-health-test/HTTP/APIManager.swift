@@ -59,7 +59,7 @@ final class APIManager {
         }.resume()
     }
     
-    func fetchCatBreeds(pageSize: Int, completionHandler: @escaping (Result<CatBreedResponse, HttpError>) -> Void) {
+    func fetchCatBreeds(pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void) {
         
         let endpoint = "/breeds"
         let url = URL(string: baseURL + endpoint)!
@@ -83,7 +83,7 @@ final class APIManager {
                 guard let data = try? result.get() else { return }
                 
                 do {
-                    let response = try jsonDecoder.decode(CatBreedResponse.self, from: data)
+                    let response = try jsonDecoder.decode([CatBreedResponse].self, from: data)
                     completionHandler(.success(response))
                 } catch {
                     print(error)
