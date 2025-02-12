@@ -48,7 +48,13 @@ final class CatBreedViewModel {
         var vms = [CatBreedCellViewModel]()
         
         for breed in breeds {
-            vms.append(CatBreedCellViewModel(nameText: breed.name ?? ""))
+            
+            guard let name = breed.name,
+                  let urlString = breed.image?.url,
+                  let url = URL(string: urlString)
+            else { return }
+            
+            vms.append(CatBreedCellViewModel(nameText: name, imageURL: url))
         }
         
         cellViewModels += vms

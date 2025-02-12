@@ -5,7 +5,9 @@
 //  Created by MAC on 11/02/2025.
 //
 
+import Foundation
+
 struct CatBreedCellViewModel {
     let nameText: String
-//    let ratingText: String
+    let imageURL: URL
 }

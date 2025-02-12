@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CatBreedViewController: UIViewController {
     
@@ -51,8 +52,7 @@ extension CatBreedViewController: UICollectionViewDataSource {
         
         let viewModel = viewModel.getCellViewModel(at: indexPath)
         cell.nameLabel.text = viewModel.nameText
-//        cell.ratingLabel.text = viewModel.ratingText
-//        cell.iconImage.image = UIImage(systemName: self.viewModel.getImage(at: indexPath))
+        cell.imageView.kf.setImage(with: viewModel.imageURL)
         
         return cell
     }
@@ -60,6 +60,6 @@ extension CatBreedViewController: UICollectionViewDataSource {
 
 extension CatBreedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 120, height: 120)
     }
 }
