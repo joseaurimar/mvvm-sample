@@ -11,6 +11,15 @@ final class CatBreedViewModel {
     
     private let apiManager: APIManager
     
+    var catBreeds = [CatBreedResponse]()
+    var reloadCollectionView: (()->())?
+    
+    private var cellViewModels = [CatBreedCellViewModel]() {
+        didSet {
+            self.reloadCollectionView?()
+        }
+    }
+    
     init() {
         self.apiManager = APIManager()
     }
@@ -19,10 +28,29 @@ final class CatBreedViewModel {
         apiManager.fetchCatBreeds(pageSize: pageSize) { [weak self] result in
             do {
 //                self?.totalProducts = try result.get().total ?? 0
-//                self?.createCell(products: try result.get().products ?? [])
+                self?.createCell(breeds: try result.get())
             } catch {
                 
             }
         }
+    }
+    
+    var numberOfCells: Int {
+        return catBreeds.count
+    }
+    
+    func getCellViewModel(at indexPath: IndexPath) -> CatBreedCellViewModel {
+        return cellViewModels[indexPath.row]
+    }
+    
+    func createCell(breeds: [CatBreedResponse]) {
+        self.catBreeds += breeds
+        var vms = [CatBreedCellViewModel]()
+        
+        for breed in breeds {
+            vms.append(CatBreedCellViewModel(nameText: breed.name ?? ""))
+        }
+        
+        cellViewModels += vms
     }
 }

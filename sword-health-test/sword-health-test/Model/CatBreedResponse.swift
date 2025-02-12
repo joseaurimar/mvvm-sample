@@ -8,8 +8,8 @@
 import Foundation
 
 struct CatBreedResponse: Codable {
-    let name: String
-    let image: Image
+    let name: String?
+    let image: Image?
 }
 
 struct Image: Codable {

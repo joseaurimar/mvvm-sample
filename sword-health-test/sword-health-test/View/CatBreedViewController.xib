@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatBreedViewController" customModule="sword_health_test" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="E3n-jz-O6y" id="XFX-Et-kTw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,14 +20,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QQp-vM-eud">
-                    <rect key="frame" x="8" y="8" width="377" height="56"/>
+                    <rect key="frame" x="8" y="67" width="377" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="C4j-Pn-2z4"/>
                     </connections>
                 </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-jz-O6y">
-                    <rect key="frame" x="0.0" y="59" width="393" height="437"/>
+                    <rect key="frame" x="0.0" y="118" width="393" height="378"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lv7-B9-PkZ">
                         <size key="itemSize" width="128" height="128"/>
@@ -47,7 +48,7 @@
                 <constraint firstItem="lOQ-sX-Bbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="4dZ-kO-W0W"/>
                 <constraint firstItem="E3n-jz-O6y" firstAttribute="top" secondItem="QQp-vM-eud" secondAttribute="bottom" constant="-5" id="80S-8s-OWm"/>
                 <constraint firstItem="QQp-vM-eud" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Odr-8s-oSe"/>
-                <constraint firstItem="QQp-vM-eud" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="Tbt-85-VaS"/>
+                <constraint firstItem="QQp-vM-eud" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Tbt-85-VaS"/>
                 <constraint firstItem="E3n-jz-O6y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VKf-ii-7OL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lOQ-sX-Bbt" secondAttribute="trailing" constant="8" id="WCg-fT-9GS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3n-jz-O6y" secondAttribute="trailing" id="XLH-st-tZQ"/>
