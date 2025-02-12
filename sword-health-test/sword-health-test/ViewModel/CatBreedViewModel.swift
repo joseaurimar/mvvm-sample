@@ -35,6 +35,15 @@ final class CatBreedViewModel {
         }
     }
     
+    func searchCatBreed(by key: String) {
+        cleanData()
+        apiManager.searchCatBreed(by: key, pageSize: 0) { [weak self] result in
+            do {
+                self?.createCell(breeds: try result.get())
+            } catch {}
+        }
+    }
+    
     var numberOfCells: Int {
         return catBreeds.count
     }
@@ -58,5 +67,10 @@ final class CatBreedViewModel {
         }
         
         cellViewModels += vms
+    }
+    
+    private func cleanData() {
+        catBreeds.removeAll()
+        cellViewModels.removeAll()
     }
 }

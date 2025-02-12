@@ -94,4 +94,41 @@ final class APIManager {
             }
         }
     }
+    
+    func searchCatBreed(by key: String, pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void) {
+        
+        let endpoint = "/breeds/search"
+        let url = URL(string: baseURL + endpoint)!
+        
+        let queryPamaters = [
+//            URLQueryItem(name: "limit", value: "10"),
+//            URLQueryItem(name: "page", value: String(pageSize)),
+            URLQueryItem(name: "api_key", value: apiKey),
+            URLQueryItem(name: "q", value: key)
+        ]
+        
+        let request = buildRequest(url: url, with: nil, queryItems: queryPamaters)
+        
+        sendRequest(request: request) { result in
+            
+            switch result {
+            case .success:
+                
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                
+                guard let data = try? result.get() else { return }
+                
+                do {
+                    let response = try jsonDecoder.decode([CatBreedResponse].self, from: data)
+                    completionHandler(.success(response))
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
 }

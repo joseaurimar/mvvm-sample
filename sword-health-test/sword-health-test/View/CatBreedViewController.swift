@@ -10,6 +10,12 @@ import Kingfisher
 
 class CatBreedViewController: UIViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+        }
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
@@ -60,6 +66,15 @@ extension CatBreedViewController: UICollectionViewDataSource {
 
 extension CatBreedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: 110, height: 110)
+    }
+}
+
+extension CatBreedViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let text = searchBar.text else { return }
+        
+        viewModel.searchCatBreed(by: text)
     }
 }
