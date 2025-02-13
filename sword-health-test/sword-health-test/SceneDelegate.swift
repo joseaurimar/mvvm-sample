@@ -25,9 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-//        let navigationController = UINavigationController(rootViewController: productListController)
-        window?.rootViewController = catBreedViewController
-//        window?.rootViewController = navigationController
+        let navigationController = UINavigationController(rootViewController: catBreedViewController)
+//        window?.rootViewController = catBreedViewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

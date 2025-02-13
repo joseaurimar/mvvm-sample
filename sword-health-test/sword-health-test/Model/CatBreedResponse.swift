@@ -9,6 +9,9 @@ import Foundation
 
 struct CatBreedResponse: Codable {
     let name: String?
+    let temperament: String?
+    let origin: String?
+    let description: String?
     let image: Image?
 }
 

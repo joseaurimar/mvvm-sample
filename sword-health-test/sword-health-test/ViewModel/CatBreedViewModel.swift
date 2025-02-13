@@ -52,6 +52,10 @@ final class CatBreedViewModel {
         return cellViewModels[indexPath.row]
     }
     
+    func getDetailsViewModel(at indexPath: IndexPath) -> CatBreedDetailViewModel {
+        return CatBreedDetailViewModel(info: catBreeds[indexPath.row])
+    }
+    
     func createCell(breeds: [CatBreedResponse]) {
         self.catBreeds += breeds
         var vms = [CatBreedCellViewModel]()
