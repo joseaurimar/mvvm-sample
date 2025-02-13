@@ -60,6 +60,11 @@ extension CatBreedViewController: UICollectionViewDataSource {
         cell.nameLabel.text = viewModel.nameText
         cell.imageView.kf.setImage(with: viewModel.imageURL)
         
+        cell.favouriteButtonActionBlock = { [weak self] cell in
+            let actualIndexPath = collectionView.indexPath(for: cell)!
+            self?.viewModel.saveFavouriteBreed(indexPath: actualIndexPath)
+        }
+        
         return cell
     }
     

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 final class CatBreedViewModel {
     
@@ -13,6 +14,7 @@ final class CatBreedViewModel {
     
     var catBreeds = [CatBreedResponse]()
     var reloadCollectionView: (()->())?
+    var container: NSPersistentContainer?
     
     private var cellViewModels = [CatBreedCellViewModel]() {
         didSet {
@@ -22,6 +24,7 @@ final class CatBreedViewModel {
     
     init() {
         self.apiManager = APIManager()
+        setupDataBase()
     }
     
     func getCatBreeds(pageSize: Int) {
@@ -76,5 +79,62 @@ final class CatBreedViewModel {
     private func cleanData() {
         catBreeds.removeAll()
         cellViewModels.removeAll()
+    }
+}
+
+// MARK: Data Base Functions
+extension CatBreedViewModel {
+    private func setupDataBase() {
+        container = NSPersistentContainer(name: "CatBreedDB")
+        
+        container?.loadPersistentStores { storeDescription, error in
+            if let error = error {
+                print("Unresolved error \(error)")
+            }
+        }
+    }
+    
+    private func saveContext() {
+        if let hasChanges = container?.viewContext.hasChanges, hasChanges {
+            do {
+                try container?.viewContext.save()
+            } catch {
+                print("An error occurred while saving: \(error)")
+            }
+        }
+    }
+    
+    func saveFavouriteBreed(indexPath: IndexPath) {
+//        let favourites = Favourites(context: container!.viewContext)
+        
+        guard let name = catBreeds[indexPath.row].name,
+              let url = catBreeds[indexPath.row].image?.url,
+              let context = container?.viewContext
+        else { return }
+        
+        let favourites = Favourites(context: context)
+        configure(favourites: favourites, name: name, url: url)
+        saveContext()
+    }
+    
+    private func configure(favourites: Favourites, name: String, url: String) {
+        favourites.name = name
+        favourites.url = url
+    }
+    
+    func getFavouritesFromDataBase() {
+        var favourites = [Favourites]()
+        
+        let request = Favourites.createFetchRequest()
+//        let sort = NSSortDescriptor(key: "date", ascending: false)
+//        request.sortDescriptors = [sort]
+        
+        do {
+            favourites = try container!.viewContext.fetch(request)
+            print("Got \(favourites[0].name)")
+            //                tableView.reloadData()
+        } catch {
+            print("Fetch failed")
+        }
     }
 }
