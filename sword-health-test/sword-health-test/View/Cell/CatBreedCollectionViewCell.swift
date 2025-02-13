@@ -7,14 +7,20 @@
 
 import UIKit
 
-class CatBreedCollectionViewCell: UICollectionViewCell {
+final class CatBreedCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    var favouriteButtonActionBlock: ((UICollectionViewCell) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    @IBAction func favouriteButtonTapped(_ sender: UIButton) {
+        favouriteButtonActionBlock?(self)
+    }
 }
