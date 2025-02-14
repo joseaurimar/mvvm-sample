@@ -27,7 +27,10 @@ class CatBreedViewController: UIViewController {
     }
     
     private let viewModel = CatBreedViewModel()
-    private var pageSize = 0
+    private var page = 0
+    
+    // 67 is the total amount of items returned by API
+    private let totalItems = 67
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +46,20 @@ class CatBreedViewController: UIViewController {
         
         viewModel.showLoading = {
             DispatchQueue.main.async {
+                self.activityIndicator.isHidden = false
                 self.activityIndicator.startAnimating()
             }
         }
         
         viewModel.hideLoading = {
             DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
                 self.activityIndicator.stopAnimating()
             }
         }
         
         viewModel.fetchFavourites()
-        viewModel.getCatBreeds(pageSize: pageSize)
+        viewModel.getCatBreeds(pageSize: page)
     }
     
     @IBAction func favouritesButtonTapped(_ sender: UIButton) {
@@ -75,7 +80,7 @@ extension CatBreedViewController: UICollectionViewDataSource {
         
         let viewModel = viewModel.getCellViewModel(at: indexPath)
         cell.nameLabel.text = viewModel.nameText
-        cell.imageView.kf.setImage(with: viewModel.imageURL)
+        cell.imageView.kf.setImage(with: viewModel.imageURL, placeholder: UIImage(systemName: "photo"))
         cell.favouriteButton.setImage(viewModel.isFavourite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
         
         cell.favouriteButtonActionBlock = { [weak self] cell in
@@ -89,6 +94,15 @@ extension CatBreedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detail = CatBreedDetailViewController(viewModel: viewModel.getDetailsViewModel(at: indexPath))
         navigationController?.pushViewController(detail, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        // MARK: Pagination
+        if viewModel.numberOfCells < totalItems && indexPath.row == viewModel.numberOfCells - 3 {
+            page += 1
+            viewModel.getCatBreeds(pageSize: page)
+        }
     }
 }
 

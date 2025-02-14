@@ -39,7 +39,6 @@ final class CatBreedViewModel {
         apiManager.fetchCatBreeds(pageSize: pageSize) { [weak self] result in
             self?.hideLoading?()
             do {
-//                self?.totalProducts = try result.get().total ?? 0
                 self?.createCell(breeds: try result.get())
             } catch {
                 
@@ -48,8 +47,10 @@ final class CatBreedViewModel {
     }
     
     func searchCatBreed(by key: String) {
+        showLoading?()
         cleanData()
         apiManager.searchCatBreed(by: key, pageSize: 0) { [weak self] result in
+            self?.hideLoading?()
             do {
                 self?.createCell(breeds: try result.get())
             } catch {}
@@ -70,12 +71,14 @@ final class CatBreedViewModel {
         
         for breed in breeds {
             
-            guard let name = breed.name,
-                  let urlString = breed.image?.url,
-                  let url = URL(string: urlString)
-            else { return }
+//            guard let name = breed.name,
+//                  let urlString = breed.image?.url,
+//                  let url = URL(string: urlString)
+//            else { return }
             
-            vms.append(CatBreedCellViewModel(nameText: name, imageURL: url, isFavourite: isFavourite(breed)))
+            vms.append(CatBreedCellViewModel(nameText: breed.name ?? "",
+                                             imageURL: URL(string: breed.image?.url ?? ""),
+                                             isFavourite: isFavourite(breed)))
         }
         
         cellViewModels += vms
