@@ -16,6 +16,8 @@ final class CatBreedViewModel {
     private var favourites = [Favourites]()
     
     var reloadCollectionView: (()->())?
+    var showLoading: (()->())?
+    var hideLoading: (()->())?
     
     private var cellViewModels = [CatBreedCellViewModel]() {
         didSet {
@@ -33,7 +35,9 @@ final class CatBreedViewModel {
     }
     
     func getCatBreeds(pageSize: Int) {
+        showLoading?()
         apiManager.fetchCatBreeds(pageSize: pageSize) { [weak self] result in
+            self?.hideLoading?()
             do {
 //                self?.totalProducts = try result.get().total ?? 0
                 self?.createCell(breeds: try result.get())

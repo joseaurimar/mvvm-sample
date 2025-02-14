@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatBreedViewController" customModule="sword_health_test" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="kyj-SS-vpR" id="dOR-0a-bsa"/>
                 <outlet property="collectionView" destination="E3n-jz-O6y" id="XFX-Et-kTw"/>
                 <outlet property="searchBar" destination="QQp-vM-eud" id="uqe-H5-lfj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -45,18 +46,23 @@
                         <action selector="favouritesButtonTapped:" destination="-1" eventType="touchUpInside" id="M3L-9b-zKB"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-SS-vpR">
+                    <rect key="frame" x="178" y="295" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="lOQ-sX-Bbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="4dZ-kO-W0W"/>
                 <constraint firstItem="E3n-jz-O6y" firstAttribute="top" secondItem="QQp-vM-eud" secondAttribute="bottom" constant="8" id="80S-8s-OWm"/>
+                <constraint firstItem="kyj-SS-vpR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Fc-xR-4Vr"/>
                 <constraint firstItem="QQp-vM-eud" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Odr-8s-oSe"/>
                 <constraint firstItem="QQp-vM-eud" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Tbt-85-VaS"/>
                 <constraint firstItem="E3n-jz-O6y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="VKf-ii-7OL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lOQ-sX-Bbt" secondAttribute="trailing" constant="8" id="WCg-fT-9GS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3n-jz-O6y" secondAttribute="trailing" constant="8" id="XLH-st-tZQ"/>
                 <constraint firstItem="lOQ-sX-Bbt" firstAttribute="top" secondItem="E3n-jz-O6y" secondAttribute="bottom" constant="8" id="YWs-Pm-Mpg"/>
+                <constraint firstItem="kyj-SS-vpR" firstAttribute="centerY" secondItem="E3n-jz-O6y" secondAttribute="centerY" id="b2D-SU-cPj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lOQ-sX-Bbt" secondAttribute="bottom" constant="8" id="knX-JV-WSa"/>
                 <constraint firstAttribute="trailing" secondItem="QQp-vM-eud" secondAttribute="trailing" constant="8" id="veh-dI-eiA"/>
             </constraints>

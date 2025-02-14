@@ -10,6 +10,7 @@ import Kingfisher
 
 class CatBreedViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
             searchBar.delegate = self
@@ -36,14 +37,23 @@ class CatBreedViewController: UIViewController {
     func initViewModel() {
         viewModel.reloadCollectionView = {
             DispatchQueue.main.async {
-//                self.loaderIndicator.isHidden = true
                 self.collectionView.reloadData()
             }
         }
         
-        viewModel.fetchFavourites()
+        viewModel.showLoading = {
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+            }
+        }
         
-//        loaderIndicator.startAnimating()
+        viewModel.hideLoading = {
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
+        }
+        
+        viewModel.fetchFavourites()
         viewModel.getCatBreeds(pageSize: pageSize)
     }
     
