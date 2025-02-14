@@ -41,6 +41,8 @@ class CatBreedViewController: UIViewController {
             }
         }
         
+        viewModel.fetchFavourites()
+        
 //        loaderIndicator.startAnimating()
         viewModel.getCatBreeds(pageSize: pageSize)
     }
@@ -64,6 +66,7 @@ extension CatBreedViewController: UICollectionViewDataSource {
         let viewModel = viewModel.getCellViewModel(at: indexPath)
         cell.nameLabel.text = viewModel.nameText
         cell.imageView.kf.setImage(with: viewModel.imageURL)
+        cell.favouriteButton.setImage(viewModel.isFavourite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
         
         cell.favouriteButtonActionBlock = { [weak self] cell in
             let actualIndexPath = collectionView.indexPath(for: cell)!

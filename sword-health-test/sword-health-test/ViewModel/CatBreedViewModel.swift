@@ -12,7 +12,9 @@ final class CatBreedViewModel {
     private let apiManager: APIManager
     private let dbManager: DBManager
     
-    var catBreeds = [CatBreedResponse]()
+    private var catBreeds = [CatBreedResponse]()
+    private var favourites = [Favourites]()
+    
     var reloadCollectionView: (()->())?
     
     private var cellViewModels = [CatBreedCellViewModel]() {
@@ -69,7 +71,7 @@ final class CatBreedViewModel {
                   let url = URL(string: urlString)
             else { return }
             
-            vms.append(CatBreedCellViewModel(nameText: name, imageURL: url))
+            vms.append(CatBreedCellViewModel(nameText: name, imageURL: url, isFavourite: isFavourite(breed)))
         }
         
         cellViewModels += vms
@@ -87,5 +89,23 @@ final class CatBreedViewModel {
         else { return }
         
         dbManager.saveFavouriteBreed(id: id, name: name, url: url)
+    }
+    
+    func fetchFavourites() {
+        dbManager.getFavouritesFromDataBase { favourites in
+            self.favourites = favourites
+        }
+    }
+    
+    private func isFavourite(_ breed: CatBreedResponse) -> Bool {
+        var isFavourite = false
+        
+        favourites.forEach { favourite in
+            if favourite.id == breed.id {
+                isFavourite = true
+            }
+        }
+        
+        return isFavourite
     }
 }

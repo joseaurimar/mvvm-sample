@@ -40,7 +40,7 @@ final class FavouriteViewModel {
             
             guard let url = URL(string: favourite.url) else { return }
     
-            vms.append(CatBreedCellViewModel(nameText: favourite.name, imageURL: url))
+            vms.append(CatBreedCellViewModel(nameText: favourite.name, imageURL: url, isFavourite: true))
         }
         
         cellViewModels += vms

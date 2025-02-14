@@ -39,6 +39,7 @@ extension FavouritesViewController: UICollectionViewDataSource {
         let viewModel = viewModel.getCellViewModel(at: indexPath)
         cell.nameLabel.text = viewModel.nameText
         cell.imageView.kf.setImage(with: viewModel.imageURL)
+        cell.favouriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         
         return cell
     }
