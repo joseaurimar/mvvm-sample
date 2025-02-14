@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import CoreData
 
 final class FavouriteViewModel {
     
     var reloadCollectionView: (()->())?
-    var container: NSPersistentContainer?
-    var favourites = [Favourites]()
+
+    private var favourites = [Favourites]()
+    private let dbManager: DBManager
     
     var numberOfCells: Int {
         return favourites.count
@@ -25,7 +25,7 @@ final class FavouriteViewModel {
     }
     
     init() {
-        setupDataBase()
+        dbManager = DBManager()
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> CatBreedCellViewModel {
@@ -45,41 +45,10 @@ final class FavouriteViewModel {
         
         cellViewModels += vms
     }
-}
-
-extension FavouriteViewModel {
-    private func setupDataBase() {
-        container = NSPersistentContainer(name: "CatBreedDB")
-        
-        container?.loadPersistentStores { storeDescription, error in
-            if let error = error {
-                print("Unresolved error \(error)")
-            }
-        }
-    }
-    
-    private func saveContext() {
-        if let hasChanges = container?.viewContext.hasChanges, hasChanges {
-            do {
-                try container?.viewContext.save()
-            } catch {
-                print("An error occurred while saving: \(error)")
-            }
-        }
-    }
     
     func getFavouritesFromDataBase() {
-        var favourites = [Favourites]()
-        
-        let request = Favourites.createFetchRequest()
-//        let sort = NSSortDescriptor(key: "date", ascending: false)
-//        request.sortDescriptors = [sort]
-        
-        do {
-            favourites = try container!.viewContext.fetch(request)
-            createCell(favourites: favourites)
-        } catch {
-            print("Fetch failed")
+        dbManager.getFavouritesFromDataBase { favourites in
+            self.createCell(favourites: favourites)
         }
     }
 }
