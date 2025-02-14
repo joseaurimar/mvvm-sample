@@ -8,6 +8,7 @@
 import Foundation
 
 struct CatBreedResponse: Codable {
+    let id: String?
     let name: String?
     let temperament: String?
     let origin: String?

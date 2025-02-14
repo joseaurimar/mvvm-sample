@@ -107,17 +107,19 @@ extension CatBreedViewModel {
     func saveFavouriteBreed(indexPath: IndexPath) {
 //        let favourites = Favourites(context: container!.viewContext)
         
-        guard let name = catBreeds[indexPath.row].name,
+        guard let id = catBreeds[indexPath.row].id,
+              let name = catBreeds[indexPath.row].name,
               let url = catBreeds[indexPath.row].image?.url,
               let context = container?.viewContext
         else { return }
         
         let favourites = Favourites(context: context)
-        configure(favourites: favourites, name: name, url: url)
+        configure(favourites: favourites, id: id, name: name, url: url)
         saveContext()
     }
     
-    private func configure(favourites: Favourites, name: String, url: String) {
+    private func configure(favourites: Favourites, id: String, name: String, url: String) {
+        favourites.id = id
         favourites.name = name
         favourites.url = url
     }
