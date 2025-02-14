@@ -44,6 +44,11 @@ class CatBreedViewController: UIViewController {
 //        loaderIndicator.startAnimating()
         viewModel.getCatBreeds(pageSize: pageSize)
     }
+    
+    @IBAction func favouritesButtonTapped(_ sender: UIButton) {
+        let favourites = FavouritesViewController()
+        navigationController?.pushViewController(favourites, animated: true)
+    }
 }
 
 extension CatBreedViewController: UICollectionViewDataSource {

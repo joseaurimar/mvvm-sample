@@ -101,8 +101,6 @@ final class APIManager {
         let url = URL(string: baseURL + endpoint)!
         
         let queryPamaters = [
-//            URLQueryItem(name: "limit", value: "10"),
-//            URLQueryItem(name: "page", value: String(pageSize)),
             URLQueryItem(name: "api_key", value: apiKey),
             URLQueryItem(name: "q", value: key)
         ]

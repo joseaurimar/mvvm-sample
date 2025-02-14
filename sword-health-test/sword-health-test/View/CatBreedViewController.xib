@@ -41,6 +41,9 @@
                     <rect key="frame" x="8" y="504" width="377" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Favourities"/>
+                    <connections>
+                        <action selector="favouritesButtonTapped:" destination="-1" eventType="touchUpInside" id="M3L-9b-zKB"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

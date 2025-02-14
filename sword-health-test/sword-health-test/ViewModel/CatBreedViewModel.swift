@@ -22,6 +22,10 @@ final class CatBreedViewModel {
         }
     }
     
+    var numberOfCells: Int {
+        return catBreeds.count
+    }
+    
     init() {
         self.apiManager = APIManager()
         setupDataBase()
@@ -45,10 +49,6 @@ final class CatBreedViewModel {
                 self?.createCell(breeds: try result.get())
             } catch {}
         }
-    }
-    
-    var numberOfCells: Int {
-        return catBreeds.count
     }
     
     func getCellViewModel(at indexPath: IndexPath) -> CatBreedCellViewModel {
@@ -122,7 +122,7 @@ extension CatBreedViewModel {
         favourites.url = url
     }
     
-    func getFavouritesFromDataBase() {
+    /*func getFavouritesFromDataBase() {
         var favourites = [Favourites]()
         
         let request = Favourites.createFetchRequest()
@@ -136,5 +136,5 @@ extension CatBreedViewModel {
         } catch {
             print("Fetch failed")
         }
-    }
+    }*/
 }
