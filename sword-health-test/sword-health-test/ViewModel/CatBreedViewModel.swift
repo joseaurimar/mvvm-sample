@@ -98,10 +98,13 @@ final class CatBreedViewModel {
     func saveFavouriteBreed(indexPath: IndexPath) {
         guard let id = catBreeds[indexPath.row].id,
               let name = catBreeds[indexPath.row].name,
-              let url = catBreeds[indexPath.row].image?.url
+              let url = catBreeds[indexPath.row].image?.url,
+              let origin = catBreeds[indexPath.row].origin,
+              let temperament = catBreeds[indexPath.row].temperament,
+              let description = catBreeds[indexPath.row].description
         else { return }
         
-        dbManager.saveFavouriteBreed(id: id, name: name, url: url)
+        dbManager.saveFavouriteBreed(id: id, name: name, url: url, origin: origin, temperament: temperament, description: description)
         cellViewModels[indexPath.row].isFavourite = true
         reloadCollectionViewAt?(indexPath)
     }

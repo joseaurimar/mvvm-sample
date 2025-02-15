@@ -34,20 +34,23 @@ final class DBManager {
         }
     }
     
-    func saveFavouriteBreed(id: String, name: String, url: String) {
+    func saveFavouriteBreed(id: String, name: String, url: String, origin: String, temperament: String, description: String) {
 //        let favourites = Favourites(context: container!.viewContext)
         
         guard let context = container?.viewContext else { return }
         
         let favourites = Favourites(context: context)
-        configure(favourites: favourites, id: id, name: name, url: url)
+        configure(favourites: favourites, id: id, name: name, url: url, origin: origin, temperament: temperament, description: description)
         saveContext()
     }
     
-    private func configure(favourites: Favourites, id: String, name: String, url: String) {
+    private func configure(favourites: Favourites, id: String, name: String, url: String, origin: String, temperament: String, description: String) {
         favourites.id = id
         favourites.name = name
         favourites.url = url
+        favourites.origin = origin
+        favourites.temperament = temperament
+        favourites.breedDescription = description
     }
     
     func getFavouritesFromDataBase(completionHandler: @escaping ([Favourites]) -> Void) {

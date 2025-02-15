@@ -64,6 +64,11 @@ extension FavouritesViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = CatBreedDetailViewController(viewModel: viewModel.getDetailsViewModel(at: indexPath))
+        navigationController?.pushViewController(detail, animated: true)
+    }
 }
 
 extension FavouritesViewController: UICollectionViewDelegateFlowLayout {

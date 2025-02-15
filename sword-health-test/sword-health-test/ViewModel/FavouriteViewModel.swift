@@ -33,6 +33,21 @@ final class FavouriteViewModel {
         return cellViewModels[indexPath.row]
     }
     
+    func getDetailsViewModel(at indexPath: IndexPath) -> CatBreedDetailViewModel {
+        
+        let catBreedResponse = favourites.map { CatBreedResponse(id: $0.id,
+                                                                 name: $0.name,
+                                                                 temperament: $0.temperament,
+                                                                 origin: $0.origin,
+                                                                 description: $0.description,
+                                                                 image: Image(id: "",
+                                                                              width: 0,
+                                                                              height: 0,
+                                                                              url: $0.url))}
+        
+        return CatBreedDetailViewModel(info: catBreedResponse[indexPath.row])
+    }
+    
     func createCell(favourites: [Favourites]) {
         self.favourites += favourites
         var vms = [CatBreedCellViewModel]()
