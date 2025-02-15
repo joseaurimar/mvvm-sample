@@ -18,7 +18,7 @@ class MockAPIManager: APIManagerProtocol {
         }
     }
     
-    func searchCatBreed(by key: String, pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void) {
+    func searchCatBreed(by key: String, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void) {
         if shouldReturnError {
             completionHandler(.failure(HttpError.serverError))
         } else {

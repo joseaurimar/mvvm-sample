@@ -46,7 +46,7 @@ final class APIManagerTests: XCTestCase {
         let expectedData = [CatBreedResponse]()
         mockAPIManager?.mockData = expectedData
         
-        mockAPIManager?.searchCatBreed(by: "", pageSize: 0) { result in
+        mockAPIManager?.searchCatBreed(by: "") { result in
             switch result {
             case .success(let data):
                 XCTAssertEqual(data, expectedData)
@@ -59,7 +59,7 @@ final class APIManagerTests: XCTestCase {
     func testSearchCatBreedWithFail() {
         mockAPIManager?.shouldReturnError = true
         
-        mockAPIManager?.searchCatBreed(by: "", pageSize: 0) { result in
+        mockAPIManager?.searchCatBreed(by: "") { result in
             switch result {
             case .success:
                 XCTFail("This test should fail!")

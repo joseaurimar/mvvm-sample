@@ -55,7 +55,7 @@ final class CatBreedViewModel {
     func searchCatBreed(by key: String) {
         showLoading?()
         cleanData()
-        apiManager.searchCatBreed(by: key, pageSize: 0) { [weak self] result in
+        apiManager.searchCatBreed(by: key) { [weak self] result in
             self?.hideLoading?()
             do {
                 self?.createCell(breeds: try result.get())

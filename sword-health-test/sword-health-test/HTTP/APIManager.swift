@@ -9,7 +9,7 @@ import Foundation
 
 protocol APIManagerProtocol {
     func fetchCatBreeds(pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void)
-    func searchCatBreed(by key: String, pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void)
+    func searchCatBreed(by key: String, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void)
 }
 
 class APIManager: APIManagerProtocol {
@@ -102,7 +102,7 @@ class APIManager: APIManagerProtocol {
         }
     }
     
-    func searchCatBreed(by key: String, pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void) {
+    func searchCatBreed(by key: String, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void) {
         
         let endpoint = "/breeds/search"
         let url = URL(string: baseURL + endpoint)!
