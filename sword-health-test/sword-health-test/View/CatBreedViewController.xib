@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CatBreedViewController" customModule="sword_health_test" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="kyj-SS-vpR" id="dOR-0a-bsa"/>
+                <outlet property="collectionView" destination="E3n-jz-O6y" id="XFX-Et-kTw"/>
+                <outlet property="searchBar" destination="QQp-vM-eud" id="uqe-H5-lfj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="581"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Search by" translatesAutoresizingMaskIntoConstraints="NO" id="QQp-vM-eud">
+                    <rect key="frame" x="8" y="67" width="377" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="C4j-Pn-2z4"/>
+                    </connections>
+                </searchBar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-jz-O6y">
+                    <rect key="frame" x="8" y="131" width="377" height="365"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lv7-B9-PkZ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOQ-sX-Bbt">
+                    <rect key="frame" x="8" y="504" width="377" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Favourities"/>
+                    <connections>
+                        <action selector="favouritesButtonTapped:" destination="-1" eventType="touchUpInside" id="M3L-9b-zKB"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-SS-vpR">
+                    <rect key="frame" x="178" y="295" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="lOQ-sX-Bbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="4dZ-kO-W0W"/>
+                <constraint firstItem="E3n-jz-O6y" firstAttribute="top" secondItem="QQp-vM-eud" secondAttribute="bottom" constant="8" id="80S-8s-OWm"/>
+                <constraint firstItem="kyj-SS-vpR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Fc-xR-4Vr"/>
+                <constraint firstItem="QQp-vM-eud" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Odr-8s-oSe"/>
+                <constraint firstItem="QQp-vM-eud" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Tbt-85-VaS"/>
+                <constraint firstItem="E3n-jz-O6y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="VKf-ii-7OL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lOQ-sX-Bbt" secondAttribute="trailing" constant="8" id="WCg-fT-9GS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E3n-jz-O6y" secondAttribute="trailing" constant="8" id="XLH-st-tZQ"/>
+                <constraint firstItem="lOQ-sX-Bbt" firstAttribute="top" secondItem="E3n-jz-O6y" secondAttribute="bottom" constant="8" id="YWs-Pm-Mpg"/>
+                <constraint firstItem="kyj-SS-vpR" firstAttribute="centerY" secondItem="E3n-jz-O6y" secondAttribute="centerY" id="b2D-SU-cPj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lOQ-sX-Bbt" secondAttribute="bottom" constant="8" id="knX-JV-WSa"/>
+                <constraint firstAttribute="trailing" secondItem="QQp-vM-eud" secondAttribute="trailing" constant="8" id="veh-dI-eiA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="87.786259541984734" y="-75.704225352112687"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

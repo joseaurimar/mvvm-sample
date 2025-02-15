@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047BA0B92D5C964400DF3B7C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 047BA0B82D5C964400DF3B7C /* Kingfisher */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		044D2B932D5B570B00A50959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044D2B712D5B570A00A50959 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044D2B782D5B570A00A50959;
+			remoteInfo = "sword-health-test";
+		};
+		044D2B9D2D5B570B00A50959 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 044D2B712D5B570A00A50959 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 044D2B782D5B570A00A50959;
+			remoteInfo = "sword-health-test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		044D2B792D5B570A00A50959 /* sword-health-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sword-health-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		044D2B922D5B570B00A50959 /* sword-health-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sword-health-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		044D2B9C2D5B570B00A50959 /* sword-health-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sword-health-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		044D2BA42D5B570B00A50959 /* Exceptions for "sword-health-test" folder in "sword-health-test" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 044D2B782D5B570A00A50959 /* sword-health-test */;
+		};
+		04A43F122D5FB0620005D730 /* Exceptions for "sword-health-test" folder in "sword-health-testTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataBase/DBManager.swift,
+				"DataBase/Favourites+CoreDataClass.swift",
+				"DataBase/Favourites+CoreDataProperties.swift",
+				HTTP/APIManager.swift,
+				HTTP/HTTPError.swift,
+				Model/CatBreedResponse.swift,
+				ViewModel/CatBreedCellViewModel.swift,
+				ViewModel/CatBreedDetailViewModel.swift,
+				ViewModel/CatBreedViewModel.swift,
+			);
+			target = 044D2B912D5B570B00A50959 /* sword-health-testTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		044D2B7B2D5B570A00A50959 /* sword-health-test */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				044D2BA42D5B570B00A50959 /* Exceptions for "sword-health-test" folder in "sword-health-test" target */,
+				04A43F122D5FB0620005D730 /* Exceptions for "sword-health-test" folder in "sword-health-testTests" target */,
+			);
+			path = "sword-health-test";
+			sourceTree = "<group>";
+		};
+		044D2B952D5B570B00A50959 /* sword-health-testTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "sword-health-testTests";
+			sourceTree = "<group>";
+		};
+		044D2B9F2D5B570B00A50959 /* sword-health-testUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "sword-health-testUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		044D2B762D5B570A00A50959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047BA0B92D5C964400DF3B7C /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044D2B8F2D5B570B00A50959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044D2B992D5B570B00A50959 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		044D2B702D5B570A00A50959 = {
+			isa = PBXGroup;
+			children = (
+				044D2B7B2D5B570A00A50959 /* sword-health-test */,
+				044D2B952D5B570B00A50959 /* sword-health-testTests */,
+				044D2B9F2D5B570B00A50959 /* sword-health-testUITests */,
+				044D2B7A2D5B570A00A50959 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		044D2B7A2D5B570A00A50959 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				044D2B792D5B570A00A50959 /* sword-health-test.app */,
+				044D2B922D5B570B00A50959 /* sword-health-testTests.xctest */,
+				044D2B9C2D5B570B00A50959 /* sword-health-testUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		044D2B782D5B570A00A50959 /* sword-health-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044D2BA52D5B570B00A50959 /* Build configuration list for PBXNativeTarget "sword-health-test" */;
+			buildPhases = (
+				044D2B752D5B570A00A50959 /* Sources */,
+				044D2B762D5B570A00A50959 /* Frameworks */,
+				044D2B772D5B570A00A50959 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				044D2B7B2D5B570A00A50959 /* sword-health-test */,
+			);
+			name = "sword-health-test";
+			packageProductDependencies = (
+				047BA0B82D5C964400DF3B7C /* Kingfisher */,
+			);
+			productName = "sword-health-test";
+			productReference = 044D2B792D5B570A00A50959 /* sword-health-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		044D2B912D5B570B00A50959 /* sword-health-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044D2BAA2D5B570B00A50959 /* Build configuration list for PBXNativeTarget "sword-health-testTests" */;
+			buildPhases = (
+				044D2B8E2D5B570B00A50959 /* Sources */,
+				044D2B8F2D5B570B00A50959 /* Frameworks */,
+				044D2B902D5B570B00A50959 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044D2B942D5B570B00A50959 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				044D2B952D5B570B00A50959 /* sword-health-testTests */,
+			);
+			name = "sword-health-testTests";
+			packageProductDependencies = (
+			);
+			productName = "sword-health-testTests";
+			productReference = 044D2B922D5B570B00A50959 /* sword-health-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		044D2B9B2D5B570B00A50959 /* sword-health-testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044D2BAD2D5B570B00A50959 /* Build configuration list for PBXNativeTarget "sword-health-testUITests" */;
+			buildPhases = (
+				044D2B982D5B570B00A50959 /* Sources */,
+				044D2B992D5B570B00A50959 /* Frameworks */,
+				044D2B9A2D5B570B00A50959 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				044D2B9E2D5B570B00A50959 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				044D2B9F2D5B570B00A50959 /* sword-health-testUITests */,
+			);
+			name = "sword-health-testUITests";
+			packageProductDependencies = (
+			);
+			productName = "sword-health-testUITests";
+			productReference = 044D2B9C2D5B570B00A50959 /* sword-health-testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		044D2B712D5B570A00A50959 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					044D2B782D5B570A00A50959 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					044D2B912D5B570B00A50959 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 044D2B782D5B570A00A50959;
+					};
+					044D2B9B2D5B570B00A50959 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 044D2B782D5B570A00A50959;
+					};
+				};
+			};
+			buildConfigurationList = 044D2B742D5B570A00A50959 /* Build configuration list for PBXProject "sword-health-test" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 044D2B702D5B570A00A50959;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				047BA0B72D5C964400DF3B7C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 044D2B7A2D5B570A00A50959 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				044D2B782D5B570A00A50959 /* sword-health-test */,
+				044D2B912D5B570B00A50959 /* sword-health-testTests */,
+				044D2B9B2D5B570B00A50959 /* sword-health-testUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		044D2B772D5B570A00A50959 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044D2B902D5B570B00A50959 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044D2B9A2D5B570B00A50959 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		044D2B752D5B570A00A50959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044D2B8E2D5B570B00A50959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044D2B982D5B570B00A50959 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		044D2B942D5B570B00A50959 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044D2B782D5B570A00A50959 /* sword-health-test */;
+			targetProxy = 044D2B932D5B570B00A50959 /* PBXContainerItemProxy */;
+		};
+		044D2B9E2D5B570B00A50959 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 044D2B782D5B570A00A50959 /* sword-health-test */;
+			targetProxy = 044D2B9D2D5B570B00A50959 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		044D2BA62D5B570B00A50959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5W5W4S7HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sword-health-test/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.sepka.sword-health-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		044D2BA72D5B570B00A50959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5W5W4S7HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "sword-health-test/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.sepka.sword-health-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		044D2BA82D5B570B00A50959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		044D2BA92D5B570B00A50959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		044D2BAB2D5B570B00A50959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5W5W4S7HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.sepka.sword-health-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sword-health-test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sword-health-test";
+			};
+			name = Debug;
+		};
+		044D2BAC2D5B570B00A50959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5W5W4S7HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.sepka.sword-health-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sword-health-test.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sword-health-test";
+			};
+			name = Release;
+		};
+		044D2BAE2D5B570B00A50959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5W5W4S7HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.sepka.sword-health-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "sword-health-test";
+			};
+			name = Debug;
+		};
+		044D2BAF2D5B570B00A50959 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T5W5W4S7HK;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pt.sepka.sword-health-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "sword-health-test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		044D2B742D5B570A00A50959 /* Build configuration list for PBXProject "sword-health-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044D2BA82D5B570B00A50959 /* Debug */,
+				044D2BA92D5B570B00A50959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044D2BA52D5B570B00A50959 /* Build configuration list for PBXNativeTarget "sword-health-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044D2BA62D5B570B00A50959 /* Debug */,
+				044D2BA72D5B570B00A50959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044D2BAA2D5B570B00A50959 /* Build configuration list for PBXNativeTarget "sword-health-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044D2BAB2D5B570B00A50959 /* Debug */,
+				044D2BAC2D5B570B00A50959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044D2BAD2D5B570B00A50959 /* Build configuration list for PBXNativeTarget "sword-health-testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044D2BAE2D5B570B00A50959 /* Debug */,
+				044D2BAF2D5B570B00A50959 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		047BA0B72D5C964400DF3B7C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		047BA0B82D5C964400DF3B7C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 047BA0B72D5C964400DF3B7C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 044D2B712D5B570A00A50959 /* Project object */;
+}
