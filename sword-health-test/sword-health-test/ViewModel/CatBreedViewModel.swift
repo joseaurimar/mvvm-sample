@@ -29,8 +29,13 @@ final class CatBreedViewModel {
         return catBreeds.count
     }
     
-    init() {
-        apiManager = APIManager()
+//    init() {
+//        apiManager = APIManager()
+//        dbManager = DBManager()
+//    }
+    
+    init(apiManager: APIManager = .shared) {
+        self.apiManager = apiManager
         dbManager = DBManager()
     }
     

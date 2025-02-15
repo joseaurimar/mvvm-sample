@@ -41,6 +41,21 @@
 			);
 			target = 044D2B782D5B570A00A50959 /* sword-health-test */;
 		};
+		04A43F122D5FB0620005D730 /* Exceptions for "sword-health-test" folder in "sword-health-testTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataBase/DBManager.swift,
+				"DataBase/Favourites+CoreDataClass.swift",
+				"DataBase/Favourites+CoreDataProperties.swift",
+				HTTP/APIManager.swift,
+				HTTP/HTTPError.swift,
+				Model/CatBreedResponse.swift,
+				ViewModel/CatBreedCellViewModel.swift,
+				ViewModel/CatBreedDetailViewModel.swift,
+				ViewModel/CatBreedViewModel.swift,
+			);
+			target = 044D2B912D5B570B00A50959 /* sword-health-testTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -48,6 +63,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				044D2BA42D5B570B00A50959 /* Exceptions for "sword-health-test" folder in "sword-health-test" target */,
+				04A43F122D5FB0620005D730 /* Exceptions for "sword-health-test" folder in "sword-health-testTests" target */,
 			);
 			path = "sword-health-test";
 			sourceTree = "<group>";

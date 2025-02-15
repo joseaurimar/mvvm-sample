@@ -7,7 +7,14 @@
 
 import Foundation
 
-final class APIManager {
+protocol APIManagerProtocol {
+    func fetchCatBreeds(pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void)
+    func searchCatBreed(by key: String, pageSize: Int, completionHandler: @escaping (Result<[CatBreedResponse], HttpError>) -> Void)
+}
+
+class APIManager: APIManagerProtocol {
+    
+    static let shared = APIManager()
     
     private let session: URLSession
     private let baseURL = "https://api.thecatapi.com/v1"

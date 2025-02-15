@@ -7,13 +7,17 @@
 
 import Foundation
 
-struct CatBreedResponse: Codable {
+struct CatBreedResponse: Codable, Equatable {
     let id: String?
     let name: String?
     let temperament: String?
     let origin: String?
     let description: String?
     let image: Image?
+    
+    static func == (lhs: CatBreedResponse, rhs: CatBreedResponse) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 struct Image: Codable {
