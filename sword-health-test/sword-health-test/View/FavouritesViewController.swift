@@ -22,6 +22,22 @@ final class FavouritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initViewModel()
+    }
+    
+    func initViewModel() {
+        viewModel.reloadCollectionView = {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        
+        viewModel.deleteItemCollectionView = { indexPath in
+            DispatchQueue.main.async {
+                self.collectionView.deleteItems(at: [indexPath])
+            }
+        }
+        
         viewModel.getFavouritesFromDataBase()
     }
 }
@@ -40,6 +56,11 @@ extension FavouritesViewController: UICollectionViewDataSource {
         cell.nameLabel.text = viewModel.nameText
         cell.imageView.kf.setImage(with: viewModel.imageURL)
         cell.favouriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        
+        cell.favouriteButtonActionBlock = { [weak self] cell in
+            let actualIndexPath = collectionView.indexPath(for: cell)!
+            self?.viewModel.deleteFavouriteFromDataBase(indexPath: actualIndexPath)
+        }
         
         return cell
     }

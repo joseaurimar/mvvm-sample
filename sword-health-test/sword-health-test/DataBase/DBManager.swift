@@ -64,4 +64,9 @@ final class DBManager {
             print("Fetch failed")
         }
     }
+    
+    func deleteFavourite(_ favourite: Favourites) {
+        container?.viewContext.delete(favourite)
+        saveContext()
+    }
 }

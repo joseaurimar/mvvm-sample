@@ -10,6 +10,7 @@ import Foundation
 final class FavouriteViewModel {
     
     var reloadCollectionView: (()->())?
+    var deleteItemCollectionView: ((IndexPath)->())?
 
     private var favourites = [Favourites]()
     private let dbManager: DBManager
@@ -50,5 +51,11 @@ final class FavouriteViewModel {
         dbManager.getFavouritesFromDataBase { favourites in
             self.createCell(favourites: favourites)
         }
+    }
+    
+    func deleteFavouriteFromDataBase(indexPath: IndexPath) {
+        dbManager.deleteFavourite(favourites[indexPath.row])
+        favourites.remove(at: indexPath.row)
+        deleteItemCollectionView?(indexPath)
     }
 }
