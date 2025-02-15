@@ -44,6 +44,12 @@ class CatBreedViewController: UIViewController {
             }
         }
         
+        viewModel.reloadCollectionViewAt = { indexPath in
+            DispatchQueue.main.async {
+                self.collectionView.reloadItems(at: [indexPath])
+            }
+        }
+        
         viewModel.showLoading = {
             DispatchQueue.main.async {
                 self.activityIndicator.isHidden = false

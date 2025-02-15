@@ -16,6 +16,7 @@ final class CatBreedViewModel {
     private var favourites = [Favourites]()
     
     var reloadCollectionView: (()->())?
+    var reloadCollectionViewAt: ((IndexPath)->())?
     var showLoading: (()->())?
     var hideLoading: (()->())?
     
@@ -101,6 +102,8 @@ final class CatBreedViewModel {
         else { return }
         
         dbManager.saveFavouriteBreed(id: id, name: name, url: url)
+        cellViewModels[indexPath.row].isFavourite = true
+        reloadCollectionViewAt?(indexPath)
     }
     
     func fetchFavourites() {

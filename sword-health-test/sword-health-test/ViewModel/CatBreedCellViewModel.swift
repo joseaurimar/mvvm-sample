@@ -10,5 +10,5 @@ import Foundation
 struct CatBreedCellViewModel {
     let nameText: String
     let imageURL: URL?
-    let isFavourite: Bool
+    var isFavourite: Bool
 }
