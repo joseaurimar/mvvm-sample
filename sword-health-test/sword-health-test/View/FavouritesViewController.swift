@@ -22,6 +22,9 @@ final class FavouritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Favourities"
+        
         initViewModel()
     }
     
