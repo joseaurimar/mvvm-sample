@@ -36,8 +36,7 @@ class CatBreedViewController: UIViewController {
         super.viewDidLoad()
         initViewModel()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        title = "Cat Breed"
     }
     
     func initViewModel() {
@@ -74,10 +73,6 @@ class CatBreedViewController: UIViewController {
     @IBAction func favouritesButtonTapped(_ sender: UIButton) {
         let favourites = FavouritesViewController()
         navigationController?.pushViewController(favourites, animated: true)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
     }
 }
 

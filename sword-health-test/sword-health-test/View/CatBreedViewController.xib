@@ -28,7 +28,7 @@
                         <outlet property="delegate" destination="-1" id="C4j-Pn-2z4"/>
                     </connections>
                 </searchBar>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-jz-O6y">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-jz-O6y">
                     <rect key="frame" x="8" y="131" width="377" height="365"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lv7-B9-PkZ">
